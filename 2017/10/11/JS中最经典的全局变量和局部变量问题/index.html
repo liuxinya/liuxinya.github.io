@@ -49,7 +49,7 @@
 <link rel="shortcut icon" href="/images/favicon.png">
 
 
-<title>归档集- 2017 - 刘新亚的主页</title>
+<title>刘新亚的主页</title>
 
 <meta name="keywords" content="">
 
@@ -125,8 +125,10 @@
 </div>
             <div class="page-title">
     <ul>
-        <li><a href="/" data-name="首页" title="Back Home">首页</a></li>
-        <li><a href="/tags" data-name="标签云" title="标签云">标签</a></li>
+        <li><a href="/">最新</a></li>
+        
+        
+        
         <li class="page-search">
     <form id="search" class="search-form">
         <label for="s" class="sr-only">请输入关键字</label>
@@ -168,98 +170,44 @@
 <div class="main-inner">
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
         <div class="post-header">
-            <h3 class="post-title">坦率的讲 - 本站目前共计8篇文章</h3>
-        </div>
-        <p><img src="/images/category-bg.jpg" alt="category-bg"></p>
-        <div class="post-content markdown-body" itemprop="articleBody">
-            <div class="archives">
-                
-                
-                
-                
-                
-                <div class="archives-item">
-                    <h2>2017年10月</h2>
-                    <ul class="archives_list">
-                        
-                        <li>11日11:46:30
-                            <a href="/2017/10/11/JS中最经典的全局变量和局部变量问题/"></a>
-                        </li>
-                        
-                
-                
-                
-                        <li>11日11:46:30
-                            <a href="/2017/10/11/js基础/"></a>
-                        </li>
-                        
-                
-                
-                
-                        <li>11日11:46:30
-                            <a href="/2017/10/11/博学谷项目准备知识/"></a>
-                        </li>
-                        
-                
-                
-                
-                        <li>08日16:19:02
-                            <a href="/2017/10/08/jQuery笔记/">jQuery笔记</a>
-                        </li>
-                        
-                
-                
-                
-                        <li>08日16:14:48
-                            <a href="/2017/10/08/bootstrap笔记/">bootstrap笔记</a>
-                        </li>
-                        
-                
-                
-                
-                        <li>08日16:06:50
-                            <a href="/2017/10/08/神奇的canvas/">神奇的canvas</a>
-                        </li>
-                        
-                    </ul>
-                </div>
-                
-                
-                
-                
-                
-                <div class="archives-item">
-                    <h2>2016年06月</h2>
-                    <ul class="archives_list">
-                        
-                        <li>16日02:13:06
-                            <a href="/2016/06/16/hello-world/">welcome to my Blog</a>
-                        </li>
-                        
-                    </ul>
-                </div>
-                
-                
-                
-                
-                
-                <div class="archives-item">
-                    <h2>2015年10月</h2>
-                    <ul class="archives_list">
-                        
-                        <li>08日22:43:34
-                            <a href="/2015/10/08/git相关/">git相关</a>
-                        </li>
-                        
-                    </ul>
-                </div>
-                
-                
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank"></a>
+                    <span title="最后编辑于2017-10-11">2017-10-11</span>
+                </p>
+                <p></p>
+            </div>
+            <h2 class="post-title"></h2>
+            <div class="post-meta">
+                本文总共383个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
+        <div class="post-content markdown-body">
+            <h2 id="JS中最经典的全局变量和局部变量问题"><a href="#JS中最经典的全局变量和局部变量问题" class="headerlink" title="JS中最经典的全局变量和局部变量问题"></a><u><a href="http://www.cnblogs.com/yxz-turing/p/4735934.html" target="_blank" rel="external">JS中最经典的全局变量和局部变量问题</a></u></h2><!--*等讲到函数的时候可以拿出来练习*-->
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    a = <span class="number">100</span>;</div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</div><div class="line">    <span class="keyword">var</span> a;</div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">&#125;</div><div class="line">test();</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">100</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">    <span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">&#125;</div><div class="line">test();</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">100</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">    a = <span class="number">10</span>;</div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">&#125;</div><div class="line">test();</div><div class="line"><span class="built_in">console</span>.log(a);</div></pre></td></tr></table></figure>
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+        </div>
+        
     </article>
+    
+    <p>本文内容仅作为作者个人兴趣与观点，不代表所在公司及团队的观点和决策。若有不恰当之处，望不吝赐教</p>
+    
+    
 </div>
-
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         </div><!-- end #main-->
     </div><!-- end #body -->
     <footer class="footer">
