@@ -49,7 +49,7 @@
 <link rel="shortcut icon" href="/images/favicon.png">
 
 
-<title>博学谷前期准备 - 刘新亚的主页</title>
+<title>博学谷项目准备知识 - 刘新亚的主页</title>
 
 <meta name="keywords" content="">
 
@@ -59,9 +59,9 @@
 <div id="nav">
     <nav class="nav-menu">
         <a class="site-name current" href="/" title="刘">刘</a>
-        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
-        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
-        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
         <!-- custom single page of menus -->
         
         
@@ -131,15 +131,15 @@
         
         <li class="page-search">
     <form id="search" class="search-form">
-        <label for="s" class="sr-only">请输入关键字</label>
-        <input class="search-field" type="text" name="s" class="text" placeholder="请输入关键字" />
-        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+        <label for="s" class="sr-only">Input Search key Words Here</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="Input Search key Words Here" />
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -151,11 +151,11 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(无标题)',
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -176,13 +176,13 @@
                 </a>
                 <p><span class="label">作者</span>
                     <a href="" target="_blank"></a>
-                    <span title="最后编辑于2015-03-11">2015-03-11</span>
+                    <span title="最后编辑于2017-10-08">2017-10-08</span>
                 </p>
                 <p></p>
             </div>
-            <h2 class="post-title">博学谷前期准备</h2>
+            <h2 class="post-title">博学谷项目准备知识</h2>
             <div class="post-meta">
-                本文总共6597个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                本文总共11298个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
@@ -421,6 +421,84 @@
 <p> 反向代理，会对服务器性能产生影响！</p>
 </li>
 </ol>
+<h1 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h1><h2 id="概念-4"><a href="#概念-4" class="headerlink" title="概念"></a>概念</h2><p>由于项目功能越来越多，我们不能将所有的代码全部放在一起，这样的话，不利于代码的管理，以及后期维护，和日后的复用！</p>
+<p>所以，我们会将代码按照不同的规则将代码拆分成一系列的模块，这个做法就是所谓的模块化！</p>
+<h2 id="模块化标准"><a href="#模块化标准" class="headerlink" title="模块化标准"></a>模块化标准</h2><h3 id="标准"><a href="#标准" class="headerlink" title="标准"></a>标准</h3><p>标准就是为了实现通用的目的，指定的一系列的规则，如果大家都遵守这个规则，那么就可以实现通用的效果</p>
+<h3 id="模块化标准-1"><a href="#模块化标准-1" class="headerlink" title="模块化标准"></a>模块化标准</h3><ol>
+<li><p>CommonJS: 为后端的js制定的标准，Node.js就是遵守这个CommonJS来实现模块化的！！！</p>
+</li>
+<li><p>AMD: Async Module Definition(异步模块定义), 实现了AMD标准的模块化技术代表为(require.js)   提倡依赖前置</p>
+</li>
+<li><p>CMD: Common Module Definition(通用模块定义), 实现了CMD标准的模块化技术代表为(sea.js)       提倡依赖延迟（以来就近） As Lazy As Possible</p>
+</li>
+</ol>
+<h2 id="模块化的实现"><a href="#模块化的实现" class="headerlink" title="模块化的实现"></a>模块化的实现</h2><ol>
+<li><p>简单以文件作为模块（不推荐）<br> 将项目中的不同功能的代码，单纯的以文件的形式进行保存</p>
+<p> 缺点：</p>
+<pre><code>1. 每个文件中并没有单独的作用域，在文件中声明的变量，都是全局变量，会造成全局变量污染
+2. 模块之间的依赖关系，需要通过分析之后，用script标签的顺序来进行确定！
+</code></pre></li>
+<li><p>通过require.js来实现模块化<br> ！</p>
+</li>
+</ol>
+<h1 id="require-js"><a href="#require-js" class="headerlink" title="require.js"></a>require.js</h1><ol>
+<li><p>require.js其实就是一个js文件，这个js文件中提供了一些功能，用来帮助我们实现模块化</p>
+<p>  – requirejs的原理，实际上它是在页面中动态创建了一个script标签，将要加载的文件的路径放到script的src属性中 </p>
+</li>
+<li><p>下载requirejs  <a href="http://requirejs.or" target="_blank" rel="external">http://requirejs.or</a></p>
+</li>
+<li><p>将requirejs引入页面</p>
+</li>
+<li><p>通过requirejs来定义一个模块，使用里面的define函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">define(function()&#123;</div><div class="line">    // 模块代码</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>通过requirejs来引用已经创建好的模块，使用里面的require函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">require([&quot;不带.js后缀模块文件的路径&quot;])</div><div class="line">require([&quot;./module&quot;,function()&#123;</div><div class="line">    //模块加载成功之后，如果要做一些事情，就可以放在这里</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果模块有返回值，那么需要用过在require中写一个回调函数，这个回调函数中需要声明一个形参，当模块加载完成之后，模块的返回值会以实参的形式传入require中写的回调函数中的形参，那么回调函数就拿到了模块的返回值了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">require([&quot;./module&quot;],function(sayHello)&#123;</div><div class="line">    sayHello();</div><div class="line">&#125;)</div><div class="line">---------</div><div class="line">(module.js文件中的代码)</div><div class="line">define(function()&#123;</div><div class="line">    function sayHello()&#123;&#125;</div><div class="line">    return dayHello;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p><strong>注意：有个模块文件中，只允许写一个define函数的调用，如果有多个，那么最终只会执行第一个！</strong></p>
+</li>
+<li><p>模块有依赖项的情况</p>
+<ul>
+<li><p>定义模块的时候，如果当前模块要依赖于别的模块的某些功能,那么就需要将别的模块作为当前模块的依赖项。</p>
+</li>
+<li><p>define函数的第一个参数中的数组中，就可以将所有的依赖项的路径（不带.js后缀）放在里面</p>
+</li>
+<li><p>当定义当前模块的时候，requirejs会先去加载他所有的依赖项再将依赖项的返回值作为参数，传递给当前模块的函数这样，我们就可以在当前模块中使用其他模块中的功能了</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>如果模块中有多个依赖项，那么要注意，每个形参和每个依赖项的顺序一定是一一对应的</strong></p>
+<p><strong>就算中间有没有返回值的模块，形参也不可以省略,一般会把有返回值的模块的形参写在前面</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">define([&quot;./modulea&quot;, &quot;./modulec&quot;, &quot;./moduled&quot;], function(sayHello, thy)&#123;</div><div class="line">    console.log(&quot;模块B中的代码&quot;);</div><div class="line">    sayHello();</div><div class="line">    console.log(thy);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h1 id="模块路径问题"><a href="#模块路径问题" class="headerlink" title="模块路径问题"></a>模块路径问题</h1><ol>
+<li>data-main</li>
+</ol>
+<p>script src=”./require.js” data-main=”./main.js”&gt;</p>
+<p>data-main属性其实就是设置一个入口文件，当requirejs加载完毕只有，会立即去加载data-main指定的js文件，然后执行里面的代码</p>
+<p><strong>注意：data-main指定的这个js文件，是异步加载的，所以一般用的较少，因为异步的问题，后面的代码可能会依赖此js文件里面的功能，这样代码在执行的时候，异步加载的js文件可能还没有加载完</strong></p>
+<ol>
+<li>baseUrl</li>
+</ol>
+<p>requirejs提供了一个设置方法，可以设置requirejs中相关的内容</p>
+<ul>
+<li>require.config</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">require.config(&#123;</div><div class="line">           baseUrl: &quot;/multimodule&quot;,</div><div class="line">           //paths属性可以为每一个模块的路径设置一个别名（ID）</div><div class="line">           //以后使用模块的时候，直接使用别名就可以</div><div class="line">           //requirejs在处理别名的时候，其实就是将baseUrl和path结合去找的文件</div><div class="line"></div><div class="line">           //paths中的文件路径如果有如下的内容出现，就不会遵守将baseUrl和path结合的方式去找文件了</div><div class="line">           //1. 以http:// https://开头</div><div class="line">           //2. 以/开头</div><div class="line">           //3. 有.js后缀</div><div class="line">           paths: &#123;</div><div class="line">               &quot;a&quot;: &quot;cms/login/user/a&quot;,</div><div class="line">               &quot;b&quot;: &quot;cms/login/user/b&quot;,</div><div class="line">               &quot;c&quot;: &quot;cms/login/user/c&quot;,</div><div class="line">               &quot;d&quot;: &quot;cms/login/user/d&quot;</div><div class="line">           &#125;</div><div class="line">       &#125;)</div><div class="line">require([&quot;a&quot;]);</div></pre></td></tr></table></figure>
+<ol>
+<li>当需要使用requirejs加载第三方的文件–shim</li>
+</ol>
+<ul>
+<li>加载第三方文件内容的时候<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">1. 先考虑这个文件是否支持模块化</div><div class="line">（判断方式，就是去文件中查看是否有使用define来定义模块）</div><div class="line"></div><div class="line">2. 如果支持，就直接用</div><div class="line"></div><div class="line">3. 如果不支持</div><div class="line"> * 考虑这个文件有没有依赖项</div><div class="line">   -- 如果没有依赖项, 就直接使用require函数将其引入即可</div><div class="line">   -- 如果有依赖项，我们需要通过config方法，为这个模块配置依赖项</div><div class="line">    (在config方法中，参数对象中添加一个属性 shim || shim是一个对象 || 对象中属性名就是要设置依赖项的模块的别名 || 属性值是一个对象，对象中包含一个属性，deps || deps属性是一个数组，数组中放当前这个第三方模块的依赖项即可！)</div><div class="line"></div><div class="line">* 考虑这个文件有没有返回值(有没有内容要提供给外界使用)</div><div class="line">  -- 如果没有需要提供给外界使用的内容，那就直接用require加载就可以</div><div class="line">  -- 如果有需要提供给外界使用的内容，那就需要在shim中，为这个第三方模块配置一下他的输出项</div><div class="line">  -- exports: &quot;第三方文件中的全局变量的名字</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">require.config(&#123;</div><div class="line">        baseUrl: &quot;/&quot;,</div><div class="line">        paths: &#123;</div><div class="line">            &quot;third&quot;: &quot;./thirdfang&quot;,</div><div class="line">            &quot;jquery&quot;: &quot;./node_modules/jquery/dist/jquery&quot;,</div><div class="line">            &quot;animate&quot;: &quot;./animate&quot;</div><div class="line">        &#125;,</div><div class="line">        //只有加载第三方内容的时候才会用到下面的shim属性</div><div class="line">        shim: &#123;</div><div class="line">            &quot;third&quot;: &#123;</div><div class="line">                //deps是用来设置依赖项的</div><div class="line">                deps: [&quot;jquery&quot;]</div><div class="line">            &#125;,</div><div class="line">            &quot;animate&quot;: &#123;</div><div class="line">                deps: [&quot;jquery&quot;],</div><div class="line">                //设置当前内容的返回值的</div><div class="line">                exports: &quot;animate&quot;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">require([&quot;./third&quot;])</div></pre></td></tr></table></figure>
+<h1 id="模块创建方式"><a href="#模块创建方式" class="headerlink" title="模块创建方式"></a>模块创建方式</h1><h2 id="匿名模块"><a href="#匿名模块" class="headerlink" title="匿名模块"></a>匿名模块</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">define([], <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="具名模块"><a href="#具名模块" class="headerlink" title="具名模块"></a>具名模块</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">define(<span class="string">"模块名称"</span>, [], <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>当创建模块的时候，使用的是具名方式的时候，如果要在paths中设置别名，那么这个别名必须和模块创建时所定义的模块名称相同</p>
+<h1 id="异步提交表单"><a href="#异步提交表单" class="headerlink" title="异步提交表单"></a>异步提交表单</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">$(&quot;form&quot;).submit(function()&#123;</div><div class="line">    //如果表单中书写了，action和method</div><div class="line">    //那么jqueryform插件会自动去表单中获取这两项内容</div><div class="line"></div><div class="line">    //可以通过参数，告诉插件，要往哪里提交，以及提交方式是什么</div><div class="line"></div><div class="line">    $(this).ajaxSubmit(&#123;</div><div class="line">        url: &quot;xyz.json&quot;,</div><div class="line">        type: &quot;get&quot;,</div><div class="line">        //表单中的数据，会自动被获取,省略了serialize序列化</div><div class="line">        //data中放的内容，是需要额外提交的内容</div><div class="line">        data: &#123;</div><div class="line">            age: 18</div><div class="line">        &#125;,</div><div class="line">        success:function(data)&#123;</div><div class="line">            console.log(data);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    return false;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 
         </div>
         <div class="post-tool">
@@ -429,7 +507,7 @@
             </a>
         </div>
         
-        <div class="post-tags">标签：
+        <div class="post-tags">Tags：
             
         </div>
         
@@ -445,7 +523,7 @@
     <footer class="footer">
     <div class="footer-inner">
         <p>
-            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <!-- 自定义链接 -->
             <a href="/help" title="help" >急救中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
