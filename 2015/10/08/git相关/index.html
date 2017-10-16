@@ -182,7 +182,7 @@
             </div>
             <h2 class="post-title">git相关</h2>
             <div class="post-meta">
-                本文总共6214个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                本文总共6428个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
@@ -409,8 +409,8 @@
 <li><p>给远程仓库推送内容</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git push 远程仓库地址 本地分支名称:远程分支名称</div><div class="line"></div><div class="line">如果本地分支名称和远程分支名称相同，那么可以缩写如下：</div><div class="line">git push xxx.xxx.git master:master</div><div class="line">git push xxx.xxx.git master</div></pre></td></tr></table></figure>
 </li>
-<li><p>获取远程仓库中所有的内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git clone 远程仓库地址 文件夹名称</div><div class="line"></div><div class="line">文件夹名称也可以不用写，默认使用的就是远程仓库的文件夹名称！！</div><div class="line"></div><div class="line">克隆不需要密码验证 push需要 因为防止别人也能随便往你项目中推送东西</div></pre></td></tr></table></figure>
+<li><p>获取远程仓库中 <strong>所有</strong> 的内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git clone 远程仓库地址 文件夹名称</div><div class="line"></div><div class="line">文件夹名称也可以不用写，默认使用的就是远程仓库的文件夹名称！！</div><div class="line"></div><div class="line">克隆不需要密码验证 push需要 因为防止别人也能随便往你项目中推送东西</div><div class="line"></div><div class="line">如果是克隆的远程仓库中的所有内容，那么意味着，项目中的所有分支中的内容都被clone下来了，但是在git bash命令行中使用git branch命令看不到所有分支的名字，但是分支确实已经存在了，这个时候如果想要看某一个分支里面的内容，我们需要看远程仓库中的分支名称，然后在bash命令中用git checkout &quot;分支名&quot;,切换到了这个分支之后，再用git branch查看分支名称，就可以看到了</div></pre></td></tr></table></figure>
 </li>
 <li><p>获取远程仓库中更新了的内容</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git pull 远程仓库地址 分支名称</div></pre></td></tr></table></figure>
