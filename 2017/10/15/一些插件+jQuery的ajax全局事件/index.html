@@ -59,9 +59,9 @@
 <div id="nav">
     <nav class="nav-menu">
         <a class="site-name current" href="/" title="刘">刘</a>
-        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
-        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
-        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
         <!-- custom single page of menus -->
         
         
@@ -131,15 +131,15 @@
         
         <li class="page-search">
     <form id="search" class="search-form">
-        <label for="s" class="sr-only">Input Search key Words Here</label>
-        <input class="search-field" type="text" name="s" class="text" placeholder="Input Search key Words Here" />
-        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
+        <label for="s" class="sr-only">请输入关键字</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="请输入关键字" />
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -151,11 +151,11 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -182,11 +182,12 @@
             </div>
             <h2 class="post-title">一些插件的介绍</h2>
             <div class="post-meta">
-                本文总共5323个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                本文总共8230个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
-            <h2 id="日期选择插件-–-datepicker"><a href="#日期选择插件-–-datepicker" class="headerlink" title="日期选择插件 – datepicker"></a>日期选择插件 – datepicker</h2><ol>
+            <h2 id="jQuery-cookie插件的使用"><a href="#jQuery-cookie插件的使用" class="headerlink" title="jQuery-cookie插件的使用"></a>jQuery-cookie插件的使用</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">//1.设置</span></div><div class="line">$.cookie(<span class="string">"key"</span>, <span class="string">"value"</span>)</div><div class="line"></div><div class="line"><span class="comment">//2. 获取</span></div><div class="line">$.cookie(<span class="string">"key"</span>)</div><div class="line"></div><div class="line"><span class="comment">//3. 设置过期时间</span></div><div class="line">$.cookie(<span class="string">"key"</span>, <span class="string">"value"</span>, &#123;<span class="attr">expires</span>: <span class="number">7</span>&#125;)</div><div class="line"></div><div class="line"><span class="comment">//4. 设置路径</span></div><div class="line"><span class="comment">//在子路径中可以将cookie的路径设置为父路径</span></div><div class="line"><span class="comment">//但是在父路径中不能将cookie的路径设置为子路径</span></div><div class="line">$.cookie(<span class="string">"key"</span>, <span class="string">"value"</span>, &#123;<span class="attr">expires</span>: <span class="number">7</span>, <span class="attr">path</span>: <span class="string">"/"</span>&#125;)</div><div class="line"></div><div class="line"><span class="comment">//5. 删除cookie</span></div><div class="line">$.removeCookie(<span class="string">'key'</span>);</div></pre></td></tr></table></figure>
+<h2 id="日期选择插件-–-datepicker"><a href="#日期选择插件-–-datepicker" class="headerlink" title="日期选择插件 – datepicker"></a>日期选择插件 – datepicker</h2><ol>
 <li>引入bootstrap.css</li>
 <li>引入jQuery</li>
 <li>引入bootstrap-datepicker3.css</li>
@@ -253,7 +254,15 @@
 </li>
 </ol>
 <ul>
-<li>注意ckeditor这玩意好像不支持模块化，如果在模块化中使用，记得在require.config中配置路径，以及shim的exports输入项</li>
+<li>注意ckeditor这东西不支持模块化，如果在模块化中使用，记得在require.config中配置路径，以及shim的exports输入项，exports输入的是这个玩意”CKEDITOR”，不是”replace”</li>
+</ul>
+<h2 id="uploadify-文件上传插件"><a href="#uploadify-文件上传插件" class="headerlink" title="uploadify-文件上传插件"></a>uploadify-文件上传插件</h2><ul>
+<li>这货依赖于jQuery<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">&lt;input type=<span class="string">"file"</span> id=<span class="string">"upfile"</span>&gt;</div><div class="line">   &lt;script&gt;</div><div class="line">       $(<span class="string">"#upfile"</span>).uploadify(&#123;</div><div class="line">           <span class="comment">//swf指的就是插件的flash文件</span></div><div class="line">           <span class="string">'swf'</span>: <span class="string">"./uploadify/uploadify.swf"</span>,</div><div class="line">           <span class="comment">//uploader指的就是上传文件的后台接口！！！</span></div><div class="line">           <span class="string">'uploader'</span>: <span class="string">'uploadify.php'</span>,</div><div class="line"></div><div class="line">           <span class="string">'fileObjName'</span>: <span class="string">"文件上传给后台时的键（key）"</span>,</div><div class="line"></div><div class="line">           <span class="comment">//在上传图片的时候可以使用fromData来附加一些键值对数据</span></div><div class="line">           <span class="string">'formData'</span>: &#123;<span class="attr">name</span>: <span class="string">'谈海银'</span>&#125;,</div><div class="line"></div><div class="line">           <span class="string">'buttonClass'</span>: <span class="string">"red"</span>,</div><div class="line">           buttonText: <span class="string">"请选择文件"</span>,</div><div class="line">           <span class="comment">//文件大小限制</span></div><div class="line">           <span class="comment">// fileSizeLimit: "20KB",</span></div><div class="line">           fileTypeExts: <span class="string">'*.gif; *.jpg; *.png'</span>,</div><div class="line">           height: <span class="number">400</span>,</div><div class="line">           <span class="comment">//method 请求方式</span></div><div class="line">           method: <span class="string">'post'</span>,</div><div class="line">           <span class="comment">//itemTemplate可以用来设置进度信息的模板</span></div><div class="line">           <span class="comment">//如果不想要进度信息，就给一个空标签就行</span></div><div class="line">           itemTemplate: <span class="string">"&lt;p&gt;&lt;/p&gt;"</span>,</div><div class="line">           <span class="comment">// file 上传成功的文件对象</span></div><div class="line">           <span class="comment">// data 服务器返回来的数据</span></div><div class="line">           <span class="comment">// response 布尔值，表示服务器是否有响应</span></div><div class="line">           onUploadSuccess: <span class="function"><span class="keyword">function</span>(<span class="params">file, data, response</span>)</span>&#123;</div><div class="line"></div><div class="line">           &#125;</div><div class="line">       &#125;)</div><div class="line">   &lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="jcrop-–-图片裁切插件"><a href="#jcrop-–-图片裁切插件" class="headerlink" title="jcrop – 图片裁切插件"></a>jcrop – 图片裁切插件</h2><ul>
+<li>依赖jQuery<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">&lt;div id=<span class="string">"box"</span>&gt;</div><div class="line">    &lt;img src=<span class="string">"./beauty.jpg"</span> alt=<span class="string">""</span> id=<span class="string">"beauty"</span>&gt;</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp"> &lt;form action=""&gt;</span></div><div class="line"><span class="regexp">    &lt;input type="hidden" name="x"&gt;</span></div><div class="line"><span class="regexp">    &lt;input type="hidden" name="y"&gt;</span></div><div class="line"><span class="regexp">    &lt;input type="hidden" name="w"&gt;</span></div><div class="line"><span class="regexp">    &lt;input type="hidden" name="h"&gt;</span></div><div class="line"><span class="regexp"> &lt;/</span>form&gt;</div><div class="line"> &lt;script&gt;</div><div class="line">    $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        $(<span class="string">"#beauty"</span>).Jcrop(&#123;</div><div class="line">            <span class="comment">// 设置默认选区 左上角的位置坐标，选区的宽和高</span></div><div class="line">            <span class="comment">// setSelect: [0, 0, 200, 100],</span></div><div class="line">            <span class="comment">// mask遮罩层的颜色</span></div><div class="line">            bgColor: <span class="string">"pink"</span>,</div><div class="line">            <span class="comment">// aspectRatio: 2,</span></div><div class="line">            <span class="comment">// mask遮罩层的透明度</span></div><div class="line">            bgOpacity: <span class="number">0.3</span>,</div><div class="line">            <span class="comment">// maxSize: [200, 100],</span></div><div class="line">            <span class="comment">// minSize: [100, 50],</span></div><div class="line">            edge: &#123;<span class="attr">n</span>:<span class="number">10</span>, <span class="attr">s</span>:<span class="number">-10</span>, <span class="attr">e</span>:<span class="number">-10</span>, <span class="attr">w</span>:<span class="number">20</span>&#125;,</div><div class="line">            boxHeight: <span class="number">400</span>,</div><div class="line">            <span class="comment">// boxWidth: 10,</span></div><div class="line">        &#125;);</div><div class="line">    &#125;)</div><div class="line"><span class="comment">//  图片裁切后，提交给后台的数据可能是裁切图片的位置和裁切大小</span></div><div class="line">jcrop提供了获取相关的数据的api，原理是给图片的容器注册cropstart cropmove cropend事件，这个事件通过冒泡的机制，冒到图片容器</div><div class="line"></div><div class="line">    $(<span class="string">"#box"</span>).on(<span class="string">"cropstart cropmove cropend"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event, selection, coords</span>)</span>&#123;</div><div class="line">        <span class="comment">// console.log(coords.x, coords.y, coords.w, coords.h);</span></div><div class="line">        <span class="comment">// x = coords.x;</span></div><div class="line">        <span class="comment">// y = coords.y;</span></div><div class="line">        <span class="comment">// h = coords.h;</span></div><div class="line">        <span class="comment">// w = coords.w;</span></div><div class="line">        $(<span class="string">"input[name='x']"</span>).val(coords.x);</div><div class="line">        $(<span class="string">"input[name='y']"</span>).val(coords.y);</div><div class="line">        $(<span class="string">"input[name='w']"</span>).val(coords.w);</div><div class="line">        $(<span class="string">"input[name='h']"</span>).val(coords.h);</div><div class="line">    &#125;)</div><div class="line"><span class="comment">// 然后可以选择用用表单提交插件，直接把数据提交给后台</span></div><div class="line">$(<span class="string">"fa"</span>).on(<span class="string">"submit"</span>,<span class="string">"form"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).ajaxSubmit()</div><div class="line">&#125;)</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+</li>
 </ul>
 
         </div>
@@ -263,7 +272,7 @@
             </a>
         </div>
         
-        <div class="post-tags">Tags：
+        <div class="post-tags">标签：
             
         </div>
         
@@ -279,7 +288,7 @@
     <footer class="footer">
     <div class="footer-inner">
         <p>
-            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <!-- 自定义链接 -->
             <a href="/help" title="help" >急救中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
