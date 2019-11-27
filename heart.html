@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>罗鑫</title>
+</head>
+<style>
+    html {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+    }
+    body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .p {
+        height: 100%;
+        width: 100%; 
+        background-image: linear-gradient(to bottom, #ffdede, #f96565);
+        position: relative;
+    }
+    .container {
+        height: 260px;
+        width: 260px;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 1s infinite alternate;
+    }
+    .container > div {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        background-color: red;
+        position: absolute;
+    }
+    .container > div.bottom {
+        width: 152px;
+        height: 152px;
+        transform: rotateZ(45deg);
+    }
+    .left {
+        background-image: linear-gradient(to right bottom, #ea5a5a, #f50b0b);
+    }
+    .right {
+        left: 100px;
+        background-image: linear-gradient(to left bottom, #f77171, #f50b0b);
+    }
+    .bottom {
+        top: 59px;
+        left: 55px;
+        z-index: -1;
+        border-radius: 4px!important;
+        background-image: linear-gradient(to left top, #fb4848 5%, #f31b1b 46%);
+    }
+    .text {
+        padding: 6px;
+    }
+    @keyframes bounce {
+        from {
+            transform: scale(0.95) translateX(-50%);
+        }
+        to {
+            transform: scale(1) translateX(-50%);
+        }
+    }
+</style>
+<body>
+    <div class="p">
+        <div class="container">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="bottom"></div>
+        </div>
+        <div class="text">
+            感谢卡被亮哥包揽了， 用代码给你画个宇宙最漂亮的心送给最漂亮的皮卡[这里有个狗头] 哈哈... <br/>皮卡感恩节快乐 永远开心！
+        </div>
+    </div>
+</body>
+</html>
