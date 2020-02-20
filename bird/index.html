@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>爱心大作战</title>
 
 </head>
 <body>
     <canvas width="800" height="500" style="border: 1px solid red;"></canvas>
-
+    <div>
+        <div>坚持20秒送颗心</div>
+        计时:&nbsp;&nbsp;<span class="time">0</span> s
+    </div>
 
 
 <script src="Game.js"></script>
@@ -19,11 +22,7 @@
     <script>
         var cs=document.querySelector('canvas');
         var ctx=cs.getContext('2d');
-
-
         var game=new Game({ctx:ctx});
-
-
 //        game.start(); //游戏开始
 
 

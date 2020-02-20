@@ -4,10 +4,12 @@
         this.roles=[];//存放所有的游戏对象
         this.imgArr=['birds','land','pipe1','pipe2','sky'];//存放图片资源的名称
         this.timer=null;//定时器
+        this.timer2 = null
         this.hero=null;//英雄
 
         //小鸟加速运动时间
         this.startTime=+new Date();
+        this.gameStartTime=this.startTime;
         this.endTime=0;
 
         this.start();//开始游戏
@@ -32,6 +34,11 @@
                     that.impact();
                 },30);
 
+                let div = document.querySelector('.time')
+                let s = 1
+                that.timer2 = setInterval(() => {
+                    div.innerHTML = s++
+                }, 1000)
 
                 //用户控制
                 that.userControl();
@@ -115,6 +122,13 @@
         impact:function(){
             if(this.ctx.isPointInPath(this.hero.x,this.hero.y)||this.hero.y<0||this.hero.y>this.ctx.canvas.height-112){
                 clearInterval(this.timer);
+                clearInterval(this.timer2);
+                let time = (this.startTime - this.gameStartTime) / 1000
+                if ( time > 20) {
+                    window.location.href='https://liuxinya.github.io/heart.html'
+                } else {
+                    alert('哈哈哈哈嗝~')
+                }
             }
 
         },

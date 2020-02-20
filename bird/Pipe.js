@@ -5,7 +5,7 @@
         this.ctx=option.ctx;
         this.index=option.index||0;
         this.spaceX=200; //管子之间的水平距离
-        this.spaceY=200; //管子之间的垂直距离
+        this.spaceY=126; //管子之间的垂直距离
         this.x=(this.index+1)*this.spaceX;
         this.y=150;
 
