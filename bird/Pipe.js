@@ -4,7 +4,7 @@
         this.downImg=option.downImg;
         this.ctx=option.ctx;
         this.index=option.index||0;
-        this.spaceX=180; //管子之间的水平距离
+        this.spaceX=220; //管子之间的水平距离
         this.spaceY=126; //管子之间的垂直距离
         this.x=200 + (this.index+1)*this.spaceX;
         this.y=150;
@@ -33,7 +33,7 @@
             //把上下的管道都变成路径 ,把画管道的地方描成路径
             ctx.rect(this.x,0,this.upImg.width,this.y);
             ctx.rect(this.x,dy,this.downImg.width,sy);
-            ctx.strokeStyle='red';
+            // ctx.strokeStyle='red';
             ctx.stroke();
         },
         //随机Y坐标
