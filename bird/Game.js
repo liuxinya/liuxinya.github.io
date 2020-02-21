@@ -126,8 +126,6 @@
                 let time = (this.startTime - this.gameStartTime) / 1000
                 if ( time > 20) {
                     window.location.href='https://liuxinya.github.io/heart.html'
-                } else {
-                    alert('哈哈哈哈嗝~')
                 }
             }
 
